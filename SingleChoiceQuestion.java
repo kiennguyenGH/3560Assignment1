@@ -2,7 +2,7 @@ public class SingleChoiceQuestion implements Question{
 
     private String question;
     private String[] answers;
-    private int numAnswers = 2;
+    private final int numAnswers = 2;
 
     public SingleChoiceQuestion(String question)
     {
@@ -24,6 +24,11 @@ public class SingleChoiceQuestion implements Question{
     public String getQuestion()
     {
         return question;
+    }
+
+    @Override
+    public int getNumAnswers() {
+        return numAnswers;
     }
     
 }

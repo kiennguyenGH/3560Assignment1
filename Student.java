@@ -54,12 +54,15 @@ public class Student {
         setSingleChoiceAnswer(num);
     }
 
-    public void generateMultipleChoiceAnswer()
+    public void generateMultipleChoiceAnswer(MultipleChoiceQuestion question)
     {
-        
+        for (int i = 0; i < question.getNumAnswers(); i++)
+        {
+            answers[i] = (int)(Math.random()*(question.getNumAnswers()-1)) + 1;
+        }
     }
 
-    public void submitAnswer()
+    public void submitAnswer(VotingService iVote)
     {
 
     }

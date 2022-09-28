@@ -2,10 +2,14 @@ public class MultipleChoiceQuestion implements Question{
 
     private String question;
     private String[] answers;
+    private int numAnswers;
+
     public MultipleChoiceQuestion(String question, String[] answers)
     {
         this.question = question;
         this.answers = answers;
+        numAnswers = answers.length;
+        
     }
 
     @Override
@@ -27,5 +31,9 @@ public class MultipleChoiceQuestion implements Question{
         return question;
     }
 
+    @Override
+    public int getNumAnswers() {
+        return numAnswers;
+    }
     
 }
