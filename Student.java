@@ -54,6 +54,11 @@ public class Student {
         setSingleChoiceAnswer(num);
     }
 
+    public void generateMultipleChoiceAnswer()
+    {
+        
+    }
+
     public void submitAnswer()
     {
 
