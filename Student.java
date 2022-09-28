@@ -8,7 +8,17 @@ public class Student {
         this.id = id;
     }
 
-    public void setAnswers(int[] answers)
+    public void setSingleChoiceAnswer(int answer)
+    {
+        this.answer = answer;
+    }
+
+    public int getSingleChoiceAnswer()
+    {
+        return answer;
+    }
+
+    public void setMultipleChoiceAnswers(int[] answers)
     {
         this.answers = answers;
     }
@@ -33,9 +43,15 @@ public class Student {
         int num = 0;
         for (int i = 0; i < 10; i++)
         {
-            num += (((Math.random()*8) + 1) * (int)Math.pow(10,i));
+            num += (((int)(Math.random()*8) + 1) * (int)Math.pow(10,i));
         }
         id = String.valueOf(num);
+    }
+
+    public void generateSingleChoiceAnswer()
+    {
+        int num = (int)(Math.random()) + 1;
+        setSingleChoiceAnswer(num);
     }
 
     public void submitAnswer()
