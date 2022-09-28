@@ -27,4 +27,19 @@ public class Student {
     {
         return id;
     }
+
+    public void generateID()
+    {
+        int num = 0;
+        for (int i = 0; i < 10; i++)
+        {
+            num += (((Math.random()*8) + 1) * (int)Math.pow(10,i));
+        }
+        id = String.valueOf(num);
+    }
+
+    public void submitAnswer()
+    {
+
+    }
 }
