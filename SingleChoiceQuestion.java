@@ -1,7 +1,8 @@
 public class SingleChoiceQuestion implements Question{
 
     private String question;
-    private String[] answers = {"Right", "Wrong"};
+    private String[] answers;
+    private int numAnswers = 2;
 
     public SingleChoiceQuestion(String question)
     {
