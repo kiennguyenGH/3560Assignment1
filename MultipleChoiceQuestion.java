@@ -24,6 +24,7 @@ public class MultipleChoiceQuestion implements Question{
         {
             System.out.println(i + ". " + answers[i-1]);
         }
+        System.out.println();
     }
 
     public void setQuestion(String question)

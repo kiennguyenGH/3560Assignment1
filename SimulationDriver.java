@@ -14,6 +14,7 @@ public class SimulationDriver {
         SingleChoiceQuestion question1 = new SingleChoiceQuestion("What is 1+1?");
         String[] tempAnswers = {"1","2"};
         question1.setAnswers(tempAnswers);
+        question1.displayQuestion();
         VotingService iVote = new VotingService(students, question1);
         for (Student i : students.values())
         {
@@ -21,13 +22,11 @@ public class SimulationDriver {
         }
         iVote.getSingleChoiceSubmissions();
         iVote.displayAnswers();
-        // for (Student i : students.values())
-        // {
-        //     System.out.println(i.getSingleChoiceAnswer());
-        // }
+       
 
         String[] tempAnswers2 = {"1","2","3","4","5"};
         MultipleChoiceQuestion question2 = new MultipleChoiceQuestion("How big is the number 5?", tempAnswers2);
+        question2.displayQuestion();
         
         VotingService iVote2 = new VotingService(students, question2);
         for (Student i : students.values())
@@ -36,16 +35,6 @@ public class SimulationDriver {
         }
         iVote2.getMultipleChoiceSubmissions();
         iVote2.displayMultipleAnswers();
-        // for (Student i : students.values())
-        // {
-        //     for (int k = 0; k < i.getMultipleChoiceAnswer().length; k++)
-        //     {
-        //         System.out.print(i.getMultipleChoiceAnswer()[k]);
-        //         System.out.print(" ");
-        //     }
-        //     System.out.println();
-            
-        // }
 
     }
 }

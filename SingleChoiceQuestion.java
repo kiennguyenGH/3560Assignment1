@@ -14,6 +14,7 @@ public class SingleChoiceQuestion implements Question{
         System.out.println(question);
         System.out.println("1. " + answers[0]);
         System.out.println("2. " + answers[1]);
+        System.out.println();
     }
 
     public void setQuestion(String question)
