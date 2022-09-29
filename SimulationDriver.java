@@ -11,9 +11,10 @@ public class SimulationDriver {
             students.put(newStudent.getID(), newStudent);
         }
 
-        SingleChoiceQuestion question1 = new SingleChoiceQuestion("What is 1+1?");
+        
         String[] tempAnswers = {"1","2"};
-        question1.setAnswers(tempAnswers);
+        SingleChoiceQuestion question1 = new SingleChoiceQuestion("What is 1+1?", tempAnswers);
+
         question1.displayQuestion();
         VotingService iVote = new VotingService(students, question1);
         for (Student i : students.values())

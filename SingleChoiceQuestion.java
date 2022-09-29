@@ -4,9 +4,11 @@ public class SingleChoiceQuestion implements Question{
     private String[] answers = new String[2];
     
 
-    public SingleChoiceQuestion(String question)
+    public SingleChoiceQuestion(String question, String[] answers)
     {
         this.question = question;
+        this.answers[0] = answers[0];
+        this.answers[1] = answers[1];
     }
 
     @Override
