@@ -13,7 +13,7 @@ public class VotingService{
     {
         studentList = list;
         singleChoiceQuestion = question;
-        numAnswers = question.getNumAnswers();
+        numAnswers = singleChoiceQuestion.getNumAnswers();
     }
 
     public VotingService(HashMap<String, Student> list, MultipleChoiceQuestion question)
@@ -21,7 +21,7 @@ public class VotingService{
         studentList = list;
         multipleChoiceQuestion = question;
         numAnswers = question.getNumAnswers();
-        multipleAnswer = new int[question.getNumAnswers()];
+        multipleAnswer = new int[multipleChoiceQuestion.getNumAnswers()];
         for (int i = 0; i < multipleAnswer.length; i++)
         {
             multipleAnswer[i] = 0;
@@ -70,14 +70,15 @@ public class VotingService{
         System.out.println();
     }
 
-    public void displayAnswers(int[] answers)
+    public void displayMultipleAnswers()
     {
         System.out.println("Student answers: ");
-        for (int i = 0; i < answers.length; i++)
+        for (int i = 0; i < multipleAnswer.length; i++)
         {
             
-            System.out.println((i + 1) + ": " + answers[i]);
+            System.out.println((i + 1) + ": " + multipleAnswer[i]);
         }
+        System.out.println();
     }
 
 }

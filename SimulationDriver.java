@@ -27,12 +27,15 @@ public class SimulationDriver {
         // }
 
         String[] tempAnswers2 = {"1","2","3","4","5"};
-        MultipleChoiceQuestion question2 = new MultipleChoiceQuestion("Who dunnit?", tempAnswers2);
+        MultipleChoiceQuestion question2 = new MultipleChoiceQuestion("How big is the number 5?", tempAnswers2);
         
+        VotingService iVote2 = new VotingService(students, question2);
         for (Student i : students.values())
         {
             i.generateMultipleChoiceAnswer(question2);
         }
+        iVote2.getMultipleChoiceSubmissions();
+        iVote2.displayMultipleAnswers();
         // for (Student i : students.values())
         // {
         //     for (int k = 0; k < i.getMultipleChoiceAnswer().length; k++)
