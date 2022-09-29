@@ -1,5 +1,5 @@
 public class Student {
-    private String id;
+    private String id; //Unique ID to student
     private int answer; //Single-Choice Answer
     private int[] answers; //Multiple-Choice Answers
 

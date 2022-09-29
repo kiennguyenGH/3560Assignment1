@@ -1,10 +1,11 @@
 public class MultipleChoiceQuestion implements Question{
 
-    private String question;
-    private String[] answers;
-    private int numAnswers;
+    private String question; //Question to ask users
+    private String[] answers; //List of possible answers for the question
+    private int numAnswers; //Number of answers
     private final int MAX_NUM_ANSWERS = 10;
 
+    //Instance of multiple choice question
     public MultipleChoiceQuestion(String question, String[] answers)
     {
         this.question = question;
@@ -17,6 +18,7 @@ public class MultipleChoiceQuestion implements Question{
         
     }
 
+    //Prints out the question and all possible answers
     @Override
     public void displayQuestion() {
         System.out.println(question);
@@ -27,6 +29,7 @@ public class MultipleChoiceQuestion implements Question{
         System.out.println();
     }
 
+    //Getter and setter methods for question and answers
     public void setQuestion(String question)
     {
         this.question = question;
