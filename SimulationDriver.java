@@ -19,6 +19,8 @@ public class SimulationDriver {
         {
             i.generateSingleChoiceAnswer();
         }
+        iVote.getSingleChoiceSubmissions();
+        iVote.displayAnswers();
         // for (Student i : students.values())
         // {
         //     System.out.println(i.getSingleChoiceAnswer());
@@ -31,16 +33,16 @@ public class SimulationDriver {
         {
             i.generateMultipleChoiceAnswer(question2);
         }
-        for (Student i : students.values())
-        {
-            for (int k = 0; k < i.getMultipleChoiceAnswer().length; k++)
-            {
-                System.out.print(i.getMultipleChoiceAnswer()[k]);
-                System.out.print(" ");
-            }
-            System.out.println();
+        // for (Student i : students.values())
+        // {
+        //     for (int k = 0; k < i.getMultipleChoiceAnswer().length; k++)
+        //     {
+        //         System.out.print(i.getMultipleChoiceAnswer()[k]);
+        //         System.out.print(" ");
+        //     }
+        //     System.out.println();
             
-        }
+        // }
 
     }
 }

@@ -62,6 +62,14 @@ public class VotingService{
         return numAnswers;
     }
 
+    public void displayAnswers()
+    {
+        System.out.println("Student answers: ");
+        System.out.println("1. " + singleAnswer[0]);
+        System.out.println("2. " + singleAnswer[1]);
+        System.out.println();
+    }
+
     public void displayAnswers(int[] answers)
     {
         System.out.println("Student answers: ");
