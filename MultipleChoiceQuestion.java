@@ -3,12 +3,17 @@ public class MultipleChoiceQuestion implements Question{
     private String question;
     private String[] answers;
     private int numAnswers;
+    private final int MAX_NUM_ANSWERS = 10;
 
     public MultipleChoiceQuestion(String question, String[] answers)
     {
         this.question = question;
         this.answers = answers;
-        numAnswers = answers.length;
+        if (answers.length > 10)
+        {
+            numAnswers = MAX_NUM_ANSWERS;
+        }
+        else numAnswers = answers.length;
         
     }
 
@@ -34,6 +39,15 @@ public class MultipleChoiceQuestion implements Question{
     @Override
     public int getNumAnswers() {
         return numAnswers;
+    }
+
+    @Override
+    public void setAnswers(String[] answers) {
+        for (int i = 0; i < this.answers.length; i++)
+        {
+            this.answers[i] = answers[i];
+        }
+        
     }
     
 }

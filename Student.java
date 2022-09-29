@@ -3,9 +3,9 @@ public class Student {
     private int answer; //Single-Choice Answer
     private int[] answers; //Multiple-Choice Answers
 
-    public Student(String id)
+    public Student()
     {
-        this.id = id;
+        id = String.valueOf(generateID());
     }
 
     public void setSingleChoiceAnswer(int answer)
@@ -38,14 +38,14 @@ public class Student {
         return id;
     }
 
-    public void generateID()
+    private int generateID()
     {
         int num = 0;
         for (int i = 0; i < 10; i++)
         {
             num += (((int)(Math.random()*8) + 1) * (int)Math.pow(10,i));
         }
-        id = String.valueOf(num);
+        return num;
     }
 
     public void generateSingleChoiceAnswer()
@@ -56,14 +56,11 @@ public class Student {
 
     public void generateMultipleChoiceAnswer(MultipleChoiceQuestion question)
     {
-        for (int i = 0; i < question.getNumAnswers(); i++)
+        int numAns = (int)(Math.random()*(question.getNumAnswers()-1)) + 1;
+        for (int i = 0; i < numAns; i++)
         {
             answers[i] = (int)(Math.random()*(question.getNumAnswers()-1)) + 1;
         }
     }
 
-    public void submitAnswer(VotingService iVote)
-    {
-
-    }
 }

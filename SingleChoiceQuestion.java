@@ -1,8 +1,8 @@
 public class SingleChoiceQuestion implements Question{
 
     private String question;
-    private String[] answers;
-    private final int numAnswers = 2;
+    private String[] answers = new String[2];
+    
 
     public SingleChoiceQuestion(String question)
     {
@@ -28,7 +28,15 @@ public class SingleChoiceQuestion implements Question{
 
     @Override
     public int getNumAnswers() {
-        return numAnswers;
+        return 2;
+    }
+
+    //If more than 2 answers are given, only the first 2 are taken
+    @Override
+    public void setAnswers(String[] answers)
+    {
+        this.answers[0] = answers[0];
+        this.answers[1] = answers[1];
     }
     
 }
