@@ -7,8 +7,10 @@ public class VotingService{
     private int numAnswers;
     private SingleChoiceQuestion singleChoiceQuestion;
     private MultipleChoiceQuestion multipleChoiceQuestion;
+    //HashMap with student's unique ID as a key
     private HashMap<String, Student> studentList = new HashMap<String, Student>();
 
+    //Instance to configure single choice question
     public VotingService(HashMap<String, Student> list, SingleChoiceQuestion question)
     {
         studentList = list;
@@ -16,6 +18,7 @@ public class VotingService{
         numAnswers = singleChoiceQuestion.getNumAnswers();
     }
 
+    //Instance to configure multiple choice question
     public VotingService(HashMap<String, Student> list, MultipleChoiceQuestion question)
     {
         studentList = list;
@@ -28,6 +31,8 @@ public class VotingService{
         }
     }
 
+    //Method for submitting single choice answers
+    //Adds 1 to the number of answers for each answer choice
     public void getSingleChoiceSubmissions()
     {
         for (Student student: studentList.values())
@@ -36,6 +41,8 @@ public class VotingService{
         }
     }
 
+    //Method for submitting multiple choice answers
+    //Adds 1 to the number of answers for each answer choice
     public void getMultipleChoiceSubmissions()
     {
         for (Student student: studentList.values())
@@ -62,6 +69,7 @@ public class VotingService{
         return numAnswers;
     }
 
+    //Prints out the number of answers for each answer choice
     public void displayAnswers()
     {
         System.out.println("Student answers: ");
@@ -70,6 +78,7 @@ public class VotingService{
         System.out.println();
     }
 
+    //Prints out the number of answers for each answer choice
     public void displayMultipleAnswers()
     {
         System.out.println("Student answers: ");

@@ -38,6 +38,7 @@ public class Student {
         return id;
     }
 
+    // Generate a 9 digit ID for student
     private int generateID()
     {
         int num = 0;
@@ -48,12 +49,19 @@ public class Student {
         return num;
     }
 
+    //Generates a random answer between 1 or 2
     public void generateSingleChoiceAnswer()
     {
         int num = (int)(Math.random()*2) + 1;
         setSingleChoiceAnswer(num);
     }
 
+    /*
+     * First generates a random number between 1 to question.getNumAnswers (numAns)
+     * 
+     * Then generates numAns amount of answers
+     * 
+     */
     public void generateMultipleChoiceAnswer(MultipleChoiceQuestion question)
     {
         
