@@ -9,14 +9,14 @@ public class VotingService{
     private MultipleChoiceQuestion multipleChoiceQuestion;
     private HashMap<String, Student> studentList = new HashMap<String, Student>();
 
-    public VotingService(HashMap list, SingleChoiceQuestion question)
+    public VotingService(HashMap<String, Student> list, SingleChoiceQuestion question)
     {
         studentList = list;
         singleChoiceQuestion = question;
         numAnswers = question.getNumAnswers();
     }
 
-    public VotingService(HashMap list, MultipleChoiceQuestion question)
+    public VotingService(HashMap<String, Student> list, MultipleChoiceQuestion question)
     {
         studentList = list;
         multipleChoiceQuestion = question;
@@ -35,6 +35,27 @@ public class VotingService{
             singleAnswer[student.getSingleChoiceAnswer()-1]++;
         }
     }
+
+    public void getMultipleChoiceSubmissions()
+    {
+        for (Student student: studentList.values())
+        {
+            for (int i = 0; i < student.getMultipleChoiceAnswer().length; i++)
+            {
+                multipleAnswer[student.getMultipleChoiceAnswer()[i]-1]++;
+            }
+        }
+    }
+
+    public int[] getSingleChoiceAnswer()
+    {
+        return singleAnswer;
+    }
+
+    public int[] getMultipleChoiceAnswer()
+    {
+        return multipleAnswer;
+    }
     
     public int getNumAnswers()
     {
@@ -43,9 +64,10 @@ public class VotingService{
 
     public void displayAnswers(int[] answers)
     {
+        System.out.println("Student answers: ");
         for (int i = 0; i < answers.length; i++)
         {
-            System.out.println("Student answers: ");
+            
             System.out.println((i + 1) + ": " + answers[i]);
         }
     }

@@ -18,12 +18,12 @@ public class Student {
         return answer;
     }
 
-    public void setMultipleChoiceAnswers(int[] answers)
+    public void setMultipleChoiceAnswer(int[] answers)
     {
         this.answers = answers;
     }
-
-    public int[] getAnswers()
+    
+    public int[] getMultipleChoiceAnswer()
     {
         return answers;
     }
@@ -41,25 +41,36 @@ public class Student {
     private int generateID()
     {
         int num = 0;
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 9; i++)
         {
-            num += (((int)(Math.random()*8) + 1) * (int)Math.pow(10,i));
+            num += (((int)(Math.random()*9) + 1) * (int)Math.pow(10,i));
         }
         return num;
     }
 
     public void generateSingleChoiceAnswer()
     {
-        int num = (int)(Math.random()) + 1;
+        int num = (int)(Math.random()*2) + 1;
         setSingleChoiceAnswer(num);
     }
 
     public void generateMultipleChoiceAnswer(MultipleChoiceQuestion question)
     {
-        int numAns = (int)(Math.random()*(question.getNumAnswers()-1)) + 1;
+        
+        int numAns = (int)(Math.random()*(question.getNumAnswers())) + 1;
+        answers = new int[numAns];
         for (int i = 0; i < numAns; i++)
         {
-            answers[i] = (int)(Math.random()*(question.getNumAnswers()-1)) + 1;
+            int temp = (int)(Math.random()*(question.getNumAnswers())) + 1;
+            for (int k = 0; k < i; k++)
+            {
+                if (answers[k] == temp)
+                {
+                    temp = (int)(Math.random()*(question.getNumAnswers())) + 1;
+                    k = -1;
+                }
+            }
+            answers[i] = temp;
         }
     }
 
